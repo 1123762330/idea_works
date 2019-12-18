@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态表格</title>
+    <style>
+        table {
+            width: 30%;
+            border: solid 1px;
+            margin: auto;
+        }
+
+        td, th {
+            text-align: center;
+            border: solid 1px;
+        }
+
+        div {
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="text" id="id" placeholder="请输入编号">
+    <input type="text" id="name"  placeholder="请输入姓名">
+    <input type="text" id="gender"  placeholder="请输入性别">
+    <input type="button" value="添加" id="btn_add">
+</div>
+
+<table>
+    <caption>学生信息表</caption>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>令狐冲</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="delTr(this);">删除</a></td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>任我行</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="delTr(this);">删除</a></td>
+    </tr>
+
+</table>
+
+<!--实现添加功能-->
+<script>
+    document.getElementById("btn_add").onclick = function(){
+        var id = document.getElementById("id").value;
+        var name = document.getElementById("name").value;
+        var gender = document.getElementById("gender").value;
+
+        //2.创建表格列,将相应的列数据添加到对应列中
+        var id_td = document.createElement("td");
+        var text_id = document.createTextNode(id);
+        id_td.appendChild(text_id);
+
+        var name_td = document.createElement("td");
+        var text_name = document.createTextNode(name);
+        name_td.appendChild(text_name);
+
+        var gender_td = document.createElement("td");
+        var text_gender = document.createTextNode(gender);
+        gender_td.appendChild(text_gender);
+
+        var a_td = document.createElement("td");
+        var ele_a = document.createElement("a");
+        ele_a.setAttribute("href","javascrpit:void(0)");
+        ele_a.setAttribute("onclick","delTr(this);");
+        var text_a = document.createTextNode("删除")
+        ele_a.appendChild(text_a);
+        a_td.appendChild(ele_a)
+
+        //3.创建行
+        var tr = document.createElement("tr");
+        //4.将td添加到tr中
+        tr.appendChild(id_td)
+        tr.appendChild(name_td)
+        tr.appendChild(gender_td)
+        tr.appendChild(a_td)
+        //5.获取table,将tr添加到表格中
+        var table = document.getElementsByTagName("table")[0];
+        table.appendChild(tr);
+    }
+
+    function delTr(obj){
+        var table = obj.parentNode.parentNode.parentNode;
+        var tr = obj.parentNode.parentNode;
+        table.removeChild(tr);
+    }
+</script>
+</body>
+</html>

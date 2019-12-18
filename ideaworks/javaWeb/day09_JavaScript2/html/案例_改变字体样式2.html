@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript">
+        //编写你的代码
+        function setClassName(name) {
+            var div = document.getElementById("newstext");
+            div.className=name;
+        }
+
+    </script>
+</head>
+<body>
+<h2>这是一个大新闻.</h2>
+
+<input type="button" value="大字体" onclick="setClassName('large')"/>
+<input type="button" value="中字体" onclick="setClassName('mid')" />
+<input type="button" value="小字体" onclick="setClassName('small')" />
+
+<hr />
+
+<div id="newstext" class="mid">
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var newWin;
+        function btn01() {
+            newWin  = window.open("http://www.baidu.com","_blank");
+        }
+        function btn02() {
+            newWin.close();
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="打开" onclick="btn01()">
+<input type="button" value="关闭" onclick="btn02()">
+</body>
+</html>

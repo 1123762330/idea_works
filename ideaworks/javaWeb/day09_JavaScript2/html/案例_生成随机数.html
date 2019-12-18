@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成随机数</title>
+</head>
+<body>
+<span  id="layer">000000</span>
+<input id="btn" type="button" value='生成随机数' onclick="randomNumber()"/>
+<script>
+    /*var eandomBtn=document.getElementById("btn");*/
+    var flag=true;
+    function randomNumber() {
+        if(flag){
+            time=setInterval("sartRoll()");//启动滚动
+            flag=false;
+        }else{
+            clearInterval(time);//停止滚动
+            flag=true;
+        }
+
+
+    }
+
+    function sartRoll() {
+        var span=document.getElementById("layer")
+        var number=Math.floor(Math.random()*900000+100000);
+        span.innerHTML=number;
+    }
+</script>
+</body>
+
+</html>

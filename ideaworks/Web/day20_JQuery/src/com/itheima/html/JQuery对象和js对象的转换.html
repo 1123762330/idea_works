@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq和js对象互相转换</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="div1">div1...</div>
+<div id="div2">div2...</div>
+
+<script>
+    //通过原生js方式
+    var divs = document.getElementsByTagName("div");
+    alert(divs.length);
+    //对divs中所有的div,是内容变为"aaa"
+    for (var i = 0; i < divs.length; i++) {
+        //divs[i].innerHTML = "aaa";
+        $(divs[i]).html("ccc");//js转jq
+    }
+
+    //通过jq方式
+    var $divs = $("div");
+    alert($divs.length);
+    //对divs中所有的div使其内容变为"bbb"
+    //$divs.html("bbb");
+    //$divs.innerHTML="bbb";
+
+    //jq转js
+    $divs[0].innerHTML = "ddd";
+    $divs.get(1).innerHTML = "eee";
+
+</script>
+
+</body>
+</html>

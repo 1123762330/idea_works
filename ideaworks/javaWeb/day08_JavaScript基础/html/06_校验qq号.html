@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+            /*
+            * 写一个方法校验qq号码
+                要求必须是5-15位
+                0不能开头
+                必须都是数字
+            */
+        function checkQQ(qq) {
+            //要求必须是5-15位
+            var len = qq.length;
+            if(len < 5 || len > 15){
+                return false;
+            }
+
+            //0不能开头
+            if(qq.charAt(0) == "0"){
+                return false;
+            }
+
+            //必须都是数字
+            //遍历qq号
+            for(var i = 0;i < len;i++) {
+                //获取qq里面每一位上的字符
+                if (isNaN(qq.charAt(i))) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        var qq = "12345";
+        var flag = checkQQ(qq);
+        alert(flag);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

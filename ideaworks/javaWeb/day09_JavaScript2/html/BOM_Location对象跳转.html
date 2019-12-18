@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location对象</title>
+</head>
+<body>
+<input type="button" id="btn" value="刷新页面">
+<input type="button" id="btn2" value="点击去下个页面">
+<script>
+    var btn=document.getElementById("btn");//获取按钮对象
+    btn.onclick=function () {//绑定事件
+        location.reload();
+    }
+
+    var btn=document.getElementById("btn2");//获取按钮对象
+    btn.onclick=function () {//绑定事件
+        location.href="案例_电灯.html";
+    }
+</script>
+</body>
+</html>

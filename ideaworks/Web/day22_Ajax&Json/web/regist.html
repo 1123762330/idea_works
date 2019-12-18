@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册检验用户名</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-1.0.0.js"></script>
+
+
+    <script>
+        //在页面加载完成后
+          function sendAJAX() {
+              $.get("/registerServlet",{username:$("input").val()},function (str) {
+                $("span").html(str.msg);
+            },"json");
+          };
+    </script>
+</head>
+<body>
+
+
+    <form>
+
+        <input type="text" id="username" onblur="sendAJAX()" name="username" placeholder="请输入用户名">
+        <span id="s_username"></span>
+        <br>
+        <input type="password" name="password" placeholder="请输入密码"><br>
+        <input type="submit" value="注册"><br>
+
+    </form>
+
+</body>
+</html>

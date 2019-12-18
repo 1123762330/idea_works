@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电灯</title>
+</head>
+<body>
+<div align="center"><img id="light" src="../img/off.gif"></div>
+<input type="button" value="返回" id="btn1">
+
+<script>
+    var light = document.getElementById("light");//获取第一个图片元素对象
+    var flag = false;//代表灯是灭的。 off图片
+    light.onclick = function () {//直接绑定事件
+        if (flag) {//如果灯是亮的则灭掉
+            light.src = "../img/off.gif";
+            flag = false;
+        } else {//如果灯是灭的则打开
+            light.src = "../img/on.gif";
+            flag = true;
+        }
+    }
+
+    //后退功能
+    var back=document.getElementById("btn1");
+    back.onclick=function () {
+        history.go(-1);
+    }
+</script>
+</body>
+</html>

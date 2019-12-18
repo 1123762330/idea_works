@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            //获取input元素
+            var input = $("#text");
+            //添加失去焦点的方法
+            input.blur(function () {
+                $("span").html("用户名已经被占用");
+            });
+
+            //下拉选择框发生变化的时候就会触发
+            $("select").change(function () {
+                alert(this.value);
+            });
+        });
+    </script>
+</head>
+<body>
+   用户名: <input id="text" type="text" ><span></span><br><br>
+
+   <select>
+       <option>么么哒</option>
+       <option>棒棒哒</option>
+       <option>萌萌哒</option>
+   </select>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script >
+        $(function(){
+            //定义一个json数组
+            var arr = [
+                {name:"河南省",cities:["郑州","洛阳","开封"]},
+                {name:"辽宁省",cities:["沈阳","大连","鞍山"]},
+                {name:"山东省",cities:["青岛","济南","烟台"]},
+            ];
+
+            //将省份添加到省份列表中
+            $(arr).each(function (index,element) {
+                $("#province").append("<option>"+element.name+"</option>");
+            })
+
+            //为省份添加事件,当省份被选中,添加城市到城市列表中
+            $("#province").change(function () {
+                var value=$(this).val();//获得所选的省份
+                //清空
+                $("#city").html("<option>----选择市-----</option>");
+                //遍历数组,拿到选择省份对应的城市数组
+                $(arr).each(function (i,n) {
+                    if(n.name == value){
+                        //遍历城市数据,将城市添加到城市列表中
+                        $(n.cities).each(function () {
+                            $("#city").append("<option>"+this+"</option>")
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<select id="province">
+    <option>--选择省--</option>
+</select>
+
+
+<select id="city">
+    <option>--选择市--</option>
+</select>
+
+</body>
+</html>

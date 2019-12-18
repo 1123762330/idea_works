@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+</head>
+<body>
+<img id="light" src="../img/off.gif" onclick="fun()">
+<img id="light2" src="../img/on.gif">
+
+<script>
+    /*第一种绑定方式*/
+    function fun() {
+        alert("我被点了")
+        alert("我又被点了")
+    }
+
+    /*第二种绑定方式*/
+    var light2=document.getElementById("light2");//获取第二个图片元素对象
+    light2.onclick=function () {//直接绑定事件
+        alert("你有本事使劲点我")
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.large {
+  border:#0099FF 1px solid;
+  font-size:20px;
+  color:#FF0000;
+  background-color:#CCFFFF;
+  width:400px;
+}
+
+.small {
+    border:#0099FF 1px solid;
+    font-size:12px;
+    color:#0000FF;
+    background-color:#FFFFFF;
+    width:400px;
+}
+
+
+.mid {
+    border:#0099FF 1px solid;
+    font-size:16px;
+    width:400px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常见的事件</title>
+</head>
+<body>
+<input type="text" id="name">
+<script>
+    /*//离焦事件
+    document.getElementById("name").onblur=function () {
+        document.write("鼠标已离开")
+    }
+
+    //加载事件
+    window.onload=function () {
+        document.getElementById("name").onload=function () {
+            alert("加载已完成!")
+        }
+    }
+
+    //绑定鼠标事件
+    document.getElementById("name").onmouseover=function () {
+        alert("鼠标来了!")
+    }*/
+
+    //绑定鼠标点击事件
+    document.getElementById("name").onmousedown=function () {
+        alert("鼠标点击了")
+    }
+
+    //显示点了哪个按键
+    document.getElementById("name").onmousedown=function () {
+    alert(event.button)
+    }
+</script>
+</body>
+</html>

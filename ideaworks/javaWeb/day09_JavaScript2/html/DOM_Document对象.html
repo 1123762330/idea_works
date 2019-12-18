@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document对象</title>
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div class="cls1">div3</div>
+<div class="cls1">div4</div>
+<input type="button" name="username" value="按钮">
+<script>
+    //根据元素id获取
+    var byId = document.getElementById("div1");
+    //根据标签名获取
+    var divs = document.getElementsByTagName("div");
+    //根据Class属性获取
+    var divs = document.getElementsByClassName("cls1");
+    //根据name属性获取,包含了元素对象的集合
+    var Name = document.getElementsByName("username");
+</script>
+</body>
+</html>

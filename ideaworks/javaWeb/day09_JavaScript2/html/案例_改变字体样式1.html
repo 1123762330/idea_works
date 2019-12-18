@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        //编写你的代码
+       function setFontSize(size) {
+           var newsbyId = document.getElementById("newstext");
+           newsbyId.style.fontSize=size;
+        }
+
+    </script>
+</head>
+<body>
+<h2>这是一个大新闻.</h2>
+
+<input type="button" value="大字体" onclick="setFontSize('40px')"/>
+<input type="button" value="中字体" onclick="setFontSize('20px')" />
+<input type="button" value="小字体" onclick="setFontSize('14px')" />
+
+<hr />
+
+<div id="newstext" class="mid">
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+    力学笃行 志存高远<br />
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.ProvinceDao">
+    <!--查询所有-->
+    <select id="findAll" resultType="com.itheima.domain.Province">
+        select * from province;
+    </select>
+
+    <!--添加用户-->
+    <insert id="addName" parameterType="com.itheima.domain.Province">
+        INSERT INTO province name VALUES(#{name});
+    </insert>
+
+</mapper>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加一个按钮</title>
+</head>
+<body>
+<div></div>
+<input type="button" id="bt1" value="设置属性">
+<script>
+    var element_an = document.createElement("input");
+    var element_div = document.getElementsByTagName("div")[0];
+    element_div.appendChild(element_an);
+
+    //设置属性
+    var ele_a = document.getElementById("bt1");
+    ele_a.onclick=function () {
+        var e=document.getElementsByTagName("input")[0];
+        e.setAttribute("type","button");//简写:e.type="button"
+        e.setAttribute("value","按钮");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<span  id="layer">000000</span>
+<input id="btn" type="button" value='生成随机数'/>
+<script>
+    //拿到生成随机数的按钮
+    var randomBtn = document.getElementById("btn");
+    //给按钮添加点击事件
+    var flag = true;//设置标记,每次点击按钮的时候改变
+    randomBtn.onclick = function () {
+        //循环执行修改
+        if(flag){
+            time = setInterval("startRoll()",10);//注意这里使用的是全局的变量接收
+            flag = false;
+        }else{
+            clearInterval(time);
+            flag = true;
+        }
+    }
+
+    function startRoll() {
+        var span = document.getElementById("layer");
+        //生成随机数
+        span.innerHTML = Math.floor(Math.random()*900000 + 100000);
+    }
+</script>
+</body>

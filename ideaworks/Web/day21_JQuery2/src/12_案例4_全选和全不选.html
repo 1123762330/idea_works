@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            //全选/全不选
+            $("#allCheck").click(function () {
+                $("input[name='item']").prop("checked",$(this).prop("checked"));
+            });
+
+            //反选
+            $("#otherCheck").click(function () {
+               $("input[name='item']").each(function (i,n) {
+                   $(n).prop("checked",!$(n).prop("checked"));
+               }) ;
+               $("#sumId").html(sum);
+            });
+
+            //求和
+            $("#sumBtn").click(function () {
+                var sum=0;
+                $("input[name='item']").each(function (i,n) {
+                    if($(n).prop("checked")){
+                        sum +=Number(n,value);
+                    }
+                });
+                $("#sumId").html(sum);
+            });
+        });
+    </script>
+</head>
+<body>
+<div>商品列表</div>
+<input type="checkbox" name="item" value="3000" />笔记本3000元<br />
+<input type="checkbox" name="item" value="2500"/>HTC手机2500元<br />
+<input type="checkbox" name="item" value="8000" />苹果电脑8000元<br />
+<input type="checkbox" name="item" value="1500" />IPAD1500元<br />
+<input type="checkbox" name="item" value="400" />玩具汽车400元<br />
+
+<input type="checkbox" name="all" id="allCheck" />全选<br />
+<input type="checkbox" name="all" id="otherCheck"/>反选<br />
+<input type="button" value="总金额" id="sumBtn" /><span id="sumId"></span>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows对象</title>
+    <script>
+        /*//第一种消息提示框
+        alert("你好,这是windows提示框")
+
+        //第二种确认框
+        var flag = confirm("你确定要退出吗?")
+        if (flag) {
+            alert("欢迎光临")
+        } else {
+            alert("点错了")
+        }
+
+        //windows输入框
+        var result = prompt("请输入用户名")
+        alert(result)*/
+
+
+        var newwin;
+        function openBtn1() {
+           newwin=window.open("http://www.baidu.com","_blank");
+        }
+        function closeBtn1() {
+            newwin.close();
+        }
+
+        /*// 一次性定时器
+        var one=setTimeout("alert('炸了')",3000);
+        //循环定时器
+        function fun() {
+            alert("我也炸一下")
+        }
+        var two=setInterval(fun,3000)
+
+        //取消定时器
+        clearTimeout(one);
+        clearInterval(two);*/
+
+        /*//获取history
+        var h1=window.history;
+        var h2=history;
+        alert(h1)
+        alert(h2)*/
+
+        //获取document
+        var openBtn = window.document.getElementById("openBtn");
+        alert(openBtn);
+
+    </script>
+</head>
+<body>
+<input type="button" value="打开新窗口" onclick="openBtn1()">
+<input type="button" value="关闭新窗口" onclick="closeBtn1()">
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <script>
+        //原生js方式
+        /*window.onload=function () {
+            //获取按钮,绑定事件
+            $("#b1").click(function () {
+                alert("abc");
+            })
+        }*/
+
+        //jq的方法
+        /*$(function () {
+            $("#b1").click(function () {
+                alert("abc");
+            })
+        });*/
+
+        //背景颜色
+        $(function () {
+            $("#div1").css("background-color","red");
+            $("#div2").css("backgroundColor","pink");
+
+
+        });
+
+        /*两种区别:window.onload只能定义一次,否则会覆盖前面的值
+        *         $(function)可以定义多次
+        * */
+    </script>
+</head>
+<body>
+<div id="div1">div1...</div>
+<div id="div2">div2...</div>
+<input type="button" value="点我" id="b1">
+<script>
+    //获取按钮,绑定事件
+    $("#b1").click(function () {
+        alert("abc");
+    })
+</script>
+</body>
+</html>

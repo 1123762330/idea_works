@@ -1,0 +1,14 @@
+package cn.itcast.hongbao;
+
+import cn.itcast.red.RedPacketFrame;
+
+public class MyHongBao extends RedPacketFrame {
+    /**
+     * 构造方法：生成红包界面。
+     *
+     * @param title 界面的标题
+     */
+    public MyHongBao(String title) {
+        super(title);
+    }
+}
